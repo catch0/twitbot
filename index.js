@@ -12,7 +12,13 @@ function searchTwitter() {
   }
   T.get('search/tweets', params)
   .then(function(res){
-    console.log(res.data.statuses);
+    const tweet = res.data.statuses[0];
+    if(!tweet){
+      throw new Error('No Status found');
+    }
+
+    const params = {id: tweet.id_str};
+    console.log(params);
   });
 }
 
