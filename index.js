@@ -13,9 +13,9 @@ function searchTwitter() {
   }
   return T.get('search/tweets', params)
   .then(function(res){
-    //grabbing the first
+    //we can either grab the first tweet
         // const tweet = res.data.statuses[0];
-    //grabbing a random one
+    //or we can grab a random one
     const tweet = res.data.statuses[Math.floor(Math.random() * res.data.statuses.length)];
     if(!tweet){
       throw new Error('No Status found');
@@ -35,7 +35,7 @@ function postTweet(url, params){
     });
 }
 
-//this function grabs a tweet we are looking for
+//this function grabs a tweet and reposts it
 function searchAndPostTweet(url){
   return function(){
     return searchTwitter()

@@ -1,11 +1,12 @@
+// bot will find tweets that mention American Horror Story and log the text to the console
 const config = require('./config');
 const twit = require('twit');
 const T = new twit(config);
 const stream = T.stream('user');
 
-//arbys bot will find references to horse dicks and recommend a trip to arbys in response
+
 const params = {
-  q: 'horse penis',
+  q: 'AHS',
   count: 5
 };
 
