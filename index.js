@@ -5,7 +5,7 @@ const T = new twit(config);
 
 function searchTwitter() {
   const params = {
-    q: '#mueller',
+    q: '@WillFisher4Cong',
     count: 5,
     result_type: ['recent', 'popular'],
     language: 'en'
