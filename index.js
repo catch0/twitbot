@@ -48,18 +48,12 @@ function retweet(){
 function favourite(){
   return searchTwitter()
   .then(function(status){
-    return T.post('favorites/create', {id: status.id_str}, function(err){
-      if(err){
-        console.log('ohh shit something dun fucked up');
-        return;
-      }
-      console.log('Favorite Successful!')
-    });
+    return postTweet('favorites/create', {id: status.id_str})
   })
   .catch(function(err){
     console.log("error favoriting", err)
   });
 }
 
-retweet();
-// favourite();
+// retweet();
+favourite();
