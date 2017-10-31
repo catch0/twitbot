@@ -5,7 +5,7 @@ const T = new twit(config);
 
 function searchTwitter() {
   const params = {
-    q: 'trek bikes',
+    q: '#mueller',
     count: 5,
     result_type: ['recent', 'popular'],
     language: 'en'
