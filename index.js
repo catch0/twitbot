@@ -1,7 +1,7 @@
 const config = require('./config');
 const twit = require('twit');
 const T = new twit(config);
-
+const int = require('./data/interests.js');
 
 
 
@@ -9,8 +9,9 @@ const T = new twit(config);
 
 //this function searches twitter for or parameters
 function searchTwitter() {
+  var interest = Math.floor(Math.random()*int.interests.length);
   const params = {
-    q: '#gostars',
+    q: interest,
     count: 100,
     result_type: ['recent', 'popular'],
     language: 'en'
@@ -47,17 +48,20 @@ function searchAndPostTweet(url){
     return postTweet(url, {id: status.id_str})
   })
   .catch(function(err){
-    console.log("htere is an error inside the search and PostTweet", err)
+    console.log("there is an error inside the search and PostTweet", err)
   });
 }
 }
 
 const retweet = searchAndPostTweet('statuses/retweet/:id');
 const favorite = searchAndPostTweet('favorites/create');
-const newTweet = function(){
-  return postTweet('statuses/update', {status: 'what a world!'})
-}
 
-newTweet();
-// retweet();
+//new tweet function will eventually build an algorithm to make generic talk i.e. so glad it's friday
+          // const newTweet = function(){
+          //   return postTweet('statuses/update', {status: 'what a world!'})
+          // }
+          // newTweet();
+
+
+retweet();
 // favorite();
