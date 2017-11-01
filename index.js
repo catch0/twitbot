@@ -41,7 +41,7 @@ function postTweet(url, params){
 }
 
 //this function grabs a tweet and reposts it
-function searchAndPostTweet(url){
+function randomPost(url){
   return function(){
     return searchTwitter()
   .then(function(status){
@@ -53,8 +53,8 @@ function searchAndPostTweet(url){
 }
 }
 
-const retweet = searchAndPostTweet('statuses/retweet/:id');
-const favorite = searchAndPostTweet('favorites/create');
+const randomRetweet = randomPost('statuses/retweet/:id');
+const randomFavorite = randomPost('favorites/create');
 
 //new tweet function will eventually build an algorithm to make generic small talk i.e. so glad it's friday
           // const newTweet = function(){
@@ -63,5 +63,5 @@ const favorite = searchAndPostTweet('favorites/create');
           // newTweet();
 
 
-retweet();
+fandomRetweet();
 // favorite();
