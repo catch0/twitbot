@@ -1,4 +1,6 @@
 module.exports.interests = ["#gostars",
                   "#nodejs",
-                  "#nycfc"
+                  "#nycfc",
+                  "#FCD",
+                  "kids getting hurt"
                 ]

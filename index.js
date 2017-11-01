@@ -1,15 +1,15 @@
 const config = require('./config');
 const twit = require('twit');
 const T = new twit(config);
-const int = require('./data/interests.js');
+const I = require('./data/interests.js');
 
 
 
 
 
-//this function searches twitter for or parameters
+//this function searches twitter for our parameters
 function searchTwitter() {
-  var interest = Math.floor(Math.random()*int.interests.length);
+  var interest = Math.floor(Math.random()*I.interests.length);
   const params = {
     q: interest,
     count: 100,
@@ -56,7 +56,7 @@ function searchAndPostTweet(url){
 const retweet = searchAndPostTweet('statuses/retweet/:id');
 const favorite = searchAndPostTweet('favorites/create');
 
-//new tweet function will eventually build an algorithm to make generic talk i.e. so glad it's friday
+//new tweet function will eventually build an algorithm to make generic small talk i.e. so glad it's friday
           // const newTweet = function(){
           //   return postTweet('statuses/update', {status: 'what a world!'})
           // }
