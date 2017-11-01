@@ -3,6 +3,10 @@ const twit = require('twit');
 const T = new twit(config);
 
 
+
+
+
+
 //this function searches twitter for or parameters
 function searchTwitter() {
   const params = {
@@ -51,7 +55,7 @@ function searchAndPostTweet(url){
 const retweet = searchAndPostTweet('statuses/retweet/:id');
 const favorite = searchAndPostTweet('favorites/create');
 const newTweet = function(){
-  return postTweet('statuses/update', {status: 'This is a test from my Awesome Twitter Bot that I bulit with node.js !!!'})
+  return postTweet('statuses/update', {status: 'what a world!'})
 }
 
 newTweet();

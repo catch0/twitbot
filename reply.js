@@ -7,14 +7,19 @@ var T = new Twit(config);
 //setting up the stream
 var stream = T.stream('user');
 //anytime someone follows me
-stream.on('follow',followed)
+stream.on('tweet', tweetEvent)
 
 
-function followed(eventMsg){
-  console.log("the follow bot is starting")
-  var name = eventMsg.source.name;
-  var screenName = eventMsg.source.screen_name;
-  tweetIt('@' + screenName + ' thanks 4 following. I am a baby bot learning to be HUMAN! ');
+function tweetEvent(eventMsg){
+  var replyto = eventMsg.in_reply_to_screen_name;
+  var from = eventMsg.user.screen_name;
+  var text = eventMsg.txt;
+
+  console.log(replyto + '' + from);
+  if (replyto === 'HenryLoudsound'){
+    var newTweet = 'fuck yeah @' + from + ' I can read you loud and clear. This is my first succesfull reply!! I am SUPER STOKED!! #nodejs '
+    tweetIt(newTweet);
+  }
 }
 
 function tweetIt(txt){
