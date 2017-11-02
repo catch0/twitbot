@@ -33,5 +33,4 @@ T.get('search/tweets', params , gotData);
      console.log("User:   " + tweets[i].user.name);
      console.log("Time:" + tweets[i].created_at);
      console.log("status id" + tweets[i].id)
-   }
-};
+  

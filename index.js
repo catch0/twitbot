@@ -7,7 +7,7 @@ const I = require('./data/interests.js');
 
 
 
-//this function searches twitter for our parameters
+//this function searches twitter for our parameters using random interests
 function searchTwitter() {
   var interest = Math.floor(Math.random()*I.interests.length);
   const params = {
@@ -63,5 +63,5 @@ const randomFavorite = randomPost('favorites/create');
           // newTweet();
 
 
-fandomRetweet();
-// favorite();
+randomRetweet();
+// randomFavorite();
