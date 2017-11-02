@@ -3,30 +3,28 @@ const config = require('./config');
 const twit = require('twit');
 const T = new twit(config);
 const stream = T.stream('user');
-
+const usa = [ '-126.83', '25.64', '-64.86', '49.84'];
 //grabs a tween when the name michael burgess is mentioned
 const params = {
   q: "\"Michael Burgess\"",
   count: 20,
   language: 'en',
-  result_type: 'recent'
-};
-// grabs a tweet when his handle is actually mentioned
-const params2 = {
-  q: "fagan is running",
-  count: 10,
-  language: 'en'
+  result_type: 'recent',
 };
 // grabs tweets when someone says linsey is running against burgess
-const params3 = {
+const linseyMention = {
   q: "@linseyfagantx is running ",
   count: 5,
   language: 'en'
 };
 
-T.get('search/tweets', params3, gotData);
+const horsePenis = {
+  q: "horse penis",
+  count: 5,
+  language: 'en'
+}
 
-
+T.get('search/tweets', params , gotData);
  function gotData(err, data, response) {
    var tweets = data.statuses;
    for(var i = 0; i < tweets.length; i++){
@@ -34,5 +32,6 @@ T.get('search/tweets', params3, gotData);
      console.log("Text:  " + tweets[i].text);
      console.log("User:   " + tweets[i].user.name);
      console.log("Time:" + tweets[i].created_at);
+     console.log("status id" + tweets[i].id)
    }
 };
