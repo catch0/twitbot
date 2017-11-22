@@ -5,12 +5,15 @@ const T = new twit(config);
 const stream = T.stream('user');
 const usa = [ '-126.83', '25.64', '-64.86', '49.84'];
 //grabs a tween when the name michael burgess is mentioned
+gftv
 const params = {
   q: "rep michael burgess",
   count: 5,
   language: 'en',
   result_type: 'recent',
 };
+
+
 // grabs tweets when someone says linsey is running against burgess
 const params2 = {
   q: "@linseyfagantx is running ",
@@ -22,7 +25,7 @@ const params3 = {
   q: "\"Horse Penis\"",
   count: 5,
   language: 'en'
-}
+}x`x`
 
 T.get('search/tweets', params , gotData);
  function gotData(err, data, response) {
