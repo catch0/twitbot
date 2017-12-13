@@ -5,7 +5,7 @@ const T = new twit(config);
 const stream = T.stream('user');
 const usa = [ '-126.83', '25.64', '-64.86', '49.84'];
 //grabs a tween when the name michael burgess is mentioned
-gftv
+
 const params = {
   q: "rep michael burgess",
   count: 5,
@@ -22,10 +22,10 @@ const params2 = {
 };
 
 const params3 = {
-  q: "\"Horse Penis\"",
+  q: "\"Michael Burgess\"",
   count: 5,
   language: 'en'
-}x`x`
+}
 
 T.get('search/tweets', params , gotData);
  function gotData(err, data, response) {
@@ -36,6 +36,5 @@ T.get('search/tweets', params , gotData);
      console.log("User:   " + tweets[i].user.name);
      console.log("Time:" + tweets[i].created_at);
      console.log("status id" + tweets[i].id)
-     console.log(tweets[i])
   }
 }
